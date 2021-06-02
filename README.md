@@ -30,7 +30,7 @@ Dependencies
 
 Install
 -------
-Clone: `git clone git://github.com/devinrm/dotfiles.git ~/dotfiles`
+Clone: `git clone git://github.com/amjacobowitz/dotfiles.git ~/dotfiles`
 
 Install: `env RCRC=$HOME/dotfiles/rcrc rcup`
 

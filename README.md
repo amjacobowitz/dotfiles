@@ -6,19 +6,11 @@ Dependencies
 
 [asdf-vm](https://github.com/asdf-vm/asdf)
 
-[bat](https://github.com/sharkdp/bat)
-
 [fzf](https://github.com/junegunn/fzf)
-
-[fd](https://github/sharkdp/fd)
-
-[hub](https://github.com/github/hub)
 
 [neovim](https://neovim.io/) (The config does not support Vim only NeoVim >= 0.5)
 
 [rcm](https://github.com/thoughtbot/rcm) (or some other symlink manager)
-
-[ripgrep](https://github.com/BurntSushi/ripgrep)
 
 [zsh](https://www.zsh.org/)
 

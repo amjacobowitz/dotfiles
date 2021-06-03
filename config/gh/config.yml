@@ -1,0 +1,4 @@
+hosts:
+    github.com:
+        oauth_token: 2a983c92db4ec3d8d706cfee515231d027db8888
+        user: amjacobowitz

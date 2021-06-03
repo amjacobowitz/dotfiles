@@ -1,4 +1,4 @@
-export VISUAL="$HOME/nvim-osx64/bin/nvim"
+export VISUAL="vim"
 export EDITOR=$VISUAL
 
 # Yarn

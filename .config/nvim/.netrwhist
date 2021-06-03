@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/amjacobowitz/work/commonlit/node_modules/@types/highcharts/js/highcharts'
+let g:netrw_dirhist_6='/Users/amjacobowitz/work/commonlit/node_modules/@types/highcharts/js'
+let g:netrw_dirhist_5='/Users/amjacobowitz/work/commonlit/node_modules/@types/highcharts'
+let g:netrw_dirhist_4='/Users/amjacobowitz/work/commonlit/node_modules/@types'
+let g:netrw_dirhist_3='/Users/amjacobowitz/work/commonlit/node_modules/@types/highcharts'
+let g:netrw_dirhist_2='/Users/amjacobowitz/work/commonlit/node_modules/@types/highcharts/modules'
+let g:netrw_dirhist_1='/Users/amjacobowitz/work/commonlit/node_modules/@types/highcharts/modules/map'
+let g:netrw_dirhist_0='/Users/amjacobowitz/work/commonlit/node_modules/@types/highcharts'
+let g:netrw_dirhist_9='/Users/amjacobowitz/work/commonlit/node_modules/@types/highcharts/modules'
+let g:netrw_dirhist_8='/Users/amjacobowitz/work/commonlit/node_modules/@types/highcharts/modules/map'

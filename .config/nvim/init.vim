@@ -40,7 +40,6 @@ Plug 'https://github.com/windwp/nvim-autopairs'
 Plug 'https://github.com/windwp/nvim-ts-autotag'
 Plug 'kyazdani42/nvim-web-devicons'
 
-
 Plug 'https://github.com/yuezk/vim-js'
 Plug 'danro/rename.vim'                  " Rename files inline
 Plug 'maxmellon/vim-jsx-pretty'          " syntax highlighting for js/jsx

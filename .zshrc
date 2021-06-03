@@ -100,7 +100,7 @@ alias ..="cd .."
 # Neovim
 alias linkvim="ln -s ~/.vim ~/.config/nvim"
 alias linkvimrc="ln -s ~/.vimrc ~/.config/nvim/init.vim"
-alias v="$HOME/nvim-osx64/bin/nvim"
+alias v="nvim"
 
 # Heroku aliases
 alias hc="heroku run rails c -r"

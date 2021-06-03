@@ -1,0 +1,10 @@
+{
+	"optOut": false,
+	"lastUpdateCheck": 1620829289951,
+	"update": {
+		"latest": "4.13.2",
+		"current": "4.8.2",
+		"type": "minor",
+		"name": "react-devtools"
+	}
+}

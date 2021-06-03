@@ -51,7 +51,7 @@ Plug 'scrooloose/nerdtree'               " View file tree
 Plug 'easymotion/vim-easymotion'         " Easymotion for finding and highlighting in files
 Plug 'ntpeters/vim-better-whitespace'    " Highlights trailing whitespace with :StripWhitespace to remove
 Plug 'rakr/vim-one'                      " Color scheme
-Plug 'Th3Whit3Wolf/one-nvim'             " Color scheme
+Plug 'https://github.com/navarasu/onedark.nvim'
 Plug 'tpope/vim-fugitive'                " incoporate git into vim
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " FZF fuzzy finder to replace ctrl-p
 Plug 'junegunn/fzf.vim'                  " FZF fuzzy finder to replace ctrl-p
@@ -159,14 +159,6 @@ inoremap kj <esc>
 inoremap <% <% %><Esc>bi
 inoremap <%= <%= %><Esc>bi
 
-" Open and close location list
-nnoremap <Leader>o :lopen<CR>
-nnoremap <Leader>oo :lclose<CR>
-
-" I18n mappings
-vmap <Leader>z :call I18nTranslateString()<CR>
-vmap <Leader>dt :call I18nDisplayTranslation()<CR>
-
 "remap split screen navigation
 noremap <C-J> <C-W><C-J>
 noremap <C-K> <C-W><C-K>
@@ -206,9 +198,7 @@ let g:ctrlp_dont_split = 'NERD'
 " Close Vim if only NERDTree is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-set background=dark
 syntax enable
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -229,8 +219,8 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
   call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
 " Active color scheme
+colorscheme onedark
 set background=dark
-colorscheme one-nvim
 
 lua << EOF
 require'nvim-treesitter.configs'.setup {

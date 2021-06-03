@@ -112,17 +112,8 @@ export NODEJS_CHECK_SIGNATURES=no
 
 autoload -Uz compinit && compinit
 
-fpath=(/Users/amjacobowitz/.asdf/completions /usr/local/share/zsh-completions /usr/local/share/zsh/site-functions /usr/local/Cellar/zsh/5.8/share/zsh/functions)
-
-flip() {
-  if [ "$#" -ne 3 ]; then
-    echo 'You must provide 3 arguments and 3rd argument must be a string';
-  else
-    perl -pi -w -e "s/$1/$2/g;" $3
-  fi
-}
-
-fpath=(/usr/local/share/zsh-completions $fpath)
+# Completions
+fpath=(${ASDF_DIR}/completions $fpath)
 
 # Syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

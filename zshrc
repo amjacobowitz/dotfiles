@@ -106,6 +106,9 @@ alias v="nvim"
 alias hc="heroku run rails c -r"
 alias ht="heroku logs -t -r"
 
+# Python aliases
+alias pt="python3 RavensProject.py; cat ProblemResults.csv"
+
 # asdf
 export NODEJS_CHECK_SIGNATURES=no
 . $HOME/.asdf/asdf.sh

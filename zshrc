@@ -80,6 +80,7 @@ alias dbsetup="bundle exec rails db:drop && bundle exec rails db:create && bundl
 alias rs="passenger start"
 alias rc="rails console"
 alias restore="development restore production"
+alias rssl="puma -b 'ssl://localhost:9292'"
 
 # RSpec
 alias rof="rspec --only-failures"

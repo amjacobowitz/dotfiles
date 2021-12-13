@@ -4,10 +4,8 @@ export EDITOR=$VISUAL
 # Yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # FZF features
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob \!.git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 _fzf_compgen_path() {
@@ -18,32 +16,13 @@ _fzf_compgen_dir() {
   rg --files "$1" | only-dir "$1"
 }
 
-# Prompt to reflect git status
-autoload -U promptinit; promptinit
-prompt pure
-
 export PGHOST=localhost
 
 #Private Github All Access Token
 export GITHUB_TOKEN=304ea71fce41bc33c979da4ae0abb1f9bec53afb
 
-#Java
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home
-export PATH=$PATH:/usr/java/jdk1.8.0_131/bin
-
-# PrinceXML
-export PATH=/usr/local/prince10/bin:$PATH
-
 # Make bin of trusted rails apps part of path
 export PATH=.git/safe/../../bin:$PATH
-
-# Setting PATH for Python 3.6
-# The original version is saved in .bash_profile.pysave
-export PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-
-# Setting PATH for Python 2.7
-# The original version is saved in .bash_profile.pysave
-export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 
 # Colors ls should use for folders, files, symlinks etc, see `man ls` and
 # search for LSCOLORS
@@ -95,7 +74,7 @@ alias pgstart="brew services start postgresql@10"
 alias pgstop="brew services stop postgresql@10"
 
 # Other aliases
-alias ess="brew services start elasticsearch"
+alias ess="brew services start elasticsearch-full"
 alias ..="cd .."
 
 # Neovim
@@ -112,7 +91,7 @@ alias pt="python3 RavensProject.py; cat ProblemResults.csv"
 
 # asdf
 export NODEJS_CHECK_SIGNATURES=no
-. $HOME/.asdf/asdf.sh
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 autoload -Uz compinit && compinit
 
@@ -120,7 +99,7 @@ autoload -Uz compinit && compinit
 fpath=(${ASDF_DIR}/completions $fpath)
 
 # Syntax highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Maintain shell history
 setopt hist_ignore_all_dups inc_append_history
@@ -128,40 +107,17 @@ HISTFILE=~/.zhistory
 HISTSIZE=4096
 SAVEHIST=4096
 
-# added by Anaconda2 2018.12 installer
-# >>> conda init >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/anaconda2/bin/conda' shell.bash hook 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
-else
-    if [ -f "/anaconda2/etc/profile.d/conda.sh" ]; then
-# . "/anaconda2/etc/profile.d/conda.sh"  # commented out by conda initialize
-        CONDA_CHANGEPS1=false conda activate base
-    else
-        \export PATH="/anaconda2/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda init <<<
+# Prompt to reflect git status
+function zle-line-init zle-keymap-select {
+  PROMPT=`/Users/aaronjacobowitz/rust/purs/target/release/purs prompt -k "$KEYMAP" -r "$?" --venv "${${VIRTUAL_ENV:t}%-*}"`
+  zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
 
-# added by Miniconda2 installer
-export PATH="/Users/amjacobowitz/miniconda2/bin:$PATH"
+autoload -Uz add-zsh-hook
 
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/amjacobowitz/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/amjacobowitz/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/amjacobowitz/opt/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/amjacobowitz/opt/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+function _prompt_purs_precmd() {
+  /Users/aaronjacobowitz/rust/purs/target/release/purs precmd
+}
+add-zsh-hook precmd _prompt_purs_precmd

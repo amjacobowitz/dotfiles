@@ -1,5 +1,6 @@
 export VISUAL="nvim"
 export EDITOR=$VISUAL
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 # Yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -17,9 +18,6 @@ _fzf_compgen_dir() {
 }
 
 export PGHOST=localhost
-
-#Private Github All Access Token
-export GITHUB_TOKEN=304ea71fce41bc33c979da4ae0abb1f9bec53afb
 
 # Make bin of trusted rails apps part of path
 export PATH=.git/safe/../../bin:$PATH
@@ -58,6 +56,7 @@ alias gpt="git push origin trunk"
 alias be="bundle exec"
 alias migrate="bundle exec rails db:migrate db:rollback && bundle exec rails db:migrate db:test:prepare"
 alias dbsetup="bundle exec rails db:drop && bundle exec rails db:create && bundle exec rails db:schema:load && bundle exec rails db:migrate && bundle exec rails db:seed"
+alias dbreset="bundle exec rails db:drop && bundle exec rails db:create && bundle exec rails db:schema:load"
 alias rs="passenger start"
 alias rc="rails console"
 alias restore="development restore production"

@@ -164,6 +164,10 @@ noremap <C-K> <C-W><C-K>
 noremap <C-L> <C-W><C-L>
 noremap <C-H> <C-W><C-H>
 
+
+" copy filename to clipboard
+nnor <Leader>cf :let @*=expand("%")<CR>
+
 "Fuzzy search options
 nnoremap <C-p> :Files<CR>
 
@@ -507,7 +511,7 @@ vim.api.nvim_set_keymap('n', 'gh', '<cmd> lua require("lspsaga.provider").lsp_fi
 vim.api.nvim_set_keymap('n', 'gs', '<cmd> lua require("lspsaga.signaturehelp").signature_help()<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', 'rg', '<cmd> lua require("lspsaga.rename").rename()<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', 'gd', '<cmd> lua require("lspsaga.provider").preview_definition()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Leader>cd', '<cmd> lua require("lspsaga.diagnostic").show_line_diagnostics()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>cd', '<cmd> lua require("lspsaga.diagnostic").open_float()<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<Leader>ca', '<cmd> lua require("lspsaga.codeaction").code_action()<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('v', '<Leader>ca', '<cmd> lua require("lspsaga.codeaction").range_code_action()<CR>', {noremap = true, silent = true})
 
@@ -519,6 +523,5 @@ vim.api.nvim_set_keymap('i', '<C-d>', "compe#scroll({ 'delta': -4 })", {expr = t
 
 
 require('trouble').setup {}
-vim.api.nvim_set_keymap('n', '<Leader>o', '<cmd>LspTroubleToggle lsp_document_diagnostics<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<Leader>o', '<cmd>Trouble document_diagnostics<cr>', {noremap = true})
 EOF
-

@@ -6,6 +6,12 @@ Dependencies
 
 [asdf-vm](https://github.com/asdf-vm/asdf)
 
+[rust](https://www.rust-lang.org/tools/install)
+
+[vundle](https://github.com/VundleVim/Vundle.vim#quick-start)
+
+[purs for prompt highlighting](https://github.com/xcambar/purs)
+
 [fzf](https://github.com/junegunn/fzf)
 
 [neovim](https://neovim.io/) (The config does not support Vim only NeoVim >= 0.5)

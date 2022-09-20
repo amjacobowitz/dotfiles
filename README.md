@@ -14,7 +14,9 @@ Dependencies
 
 [fzf](https://github.com/junegunn/fzf)
 
-[neovim](https://neovim.io/) (The config does not support Vim only NeoVim >= 0.5)
+[neovim](https://neovim.io/)
+
+[vim-plug](https://github.com/junegunn/vim-plug)
 
 [rcm](https://github.com/thoughtbot/rcm) (or some other symlink manager)
 
@@ -24,7 +26,6 @@ Dependencies
 
 [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
-(See Brewfile if on MacOS or bin/laptop if on Fedora)
 
 Install
 -------
@@ -36,4 +37,4 @@ This will create symlinks for config files in your `$HOME` directory.
 
 You can safely run `rcup` multiple times to update.
 
-If your plugins aren't installed run `VundleInstall`
+If your plugins aren't installed run `PlugInstall` after installing vim-plug.
